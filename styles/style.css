@@ -149,14 +149,14 @@ section {
 }
 .logo .logo-1{
 
-  height:50px;
+  height:55px;
   
 }
 
 .logo .logo-2 {
-  height: 18px;
-  margin-left: -5px;
-  margin-top: 15px;
+  height: 30px;
+  margin-left: -2px;
+  margin-top: 14px;
 }
 
 
@@ -587,6 +587,7 @@ section {
   width: 63.6%; /* Two items per row on desktop */
   margin-bottom: 50px;
   /* background:red; */
+  margin-left: -140px
 }
 
 .feature-item-2{
@@ -1009,6 +1010,7 @@ gap:10px;
   width: 100%; /* Two items per row on desktop */
   margin-bottom: 50px;
   /* background:red; */
+  margin-left: 11px;
 }
 
 .feature-item-2{
@@ -1147,6 +1149,11 @@ gap:2px;
   }
   .feature-item {
     width: 100%; /* Full width on smaller screens */
+  }
+
+  
+  .feature-item-1{
+    margin-left: 11px;
   }
 
   .features-heading {
@@ -1361,7 +1368,7 @@ gap:2px;
     position: fixed; /* Fix navbar at the top */
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+    background-color: transparent; /* Semi-transparent background */
     padding: 10px 15px;
     z-index: 1000;
 
@@ -1426,14 +1433,14 @@ gap:2px;
 }
 .logo .logo-1{
 
-  height:35px;
+  height:39px;
   
 }
 
 .logo .logo-2 {
-  height: 15px;
-  margin-left: -2px;
-  margin-top: 14px;
+  height: 17px;
+  margin-left: -3px;
+  margin-top: 12px;
 }
 
 }
@@ -1452,7 +1459,7 @@ gap:2px;
     left: 0;
     flex-wrap: nowrap; /* Allow wrapping if necessary */
     gap: 2px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color:transparent;
     padding: 0px;
   }
   .hero .logo{
