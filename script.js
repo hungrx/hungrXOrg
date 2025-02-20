@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = document.getElementById('email').value;
       
       try {
-        const response = await fetch('https://webbackend-ojng.onrender.com/users/addUser', {
+        const response = await fetch('https://hungrxorg.onrender.com/users/addUser', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, email }),
