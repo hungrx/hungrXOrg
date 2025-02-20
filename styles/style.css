@@ -1811,3 +1811,143 @@ gap:2px;
 }
 
 
+/* Prelaunch Registration Section Styles */
+.prelaunch-section {
+  background-color: #1a1a1a; /* White background for a clean look */
+  padding: 60px 20px;
+  text-align: center;
+  color: #a6ce39; /* Dark gray text for readability */
+}
+.pre {
+  color: #EEFFBB;
+}
+.prelaunch-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.prelaunch-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.prelaunch-section p {
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  position:relative;
+  width: 400px;
+  margin-left: 55px;
+  margin-top: 5px;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #cccccc; /* Light gray border */
+  background-color: #f9f9f9; /* Very light gray background */
+  color: #333333;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.registration-form input:focus {
+  outline: none;
+  border-color: #007BFF; /* Blue border on focus */
+}
+
+.registration-form input::placeholder {
+  color: #999999; /* Medium gray placeholder text */
+}
+
+.register-btn {
+  background-color: #a6ce39; /* Blue background */
+  color: #060606; /* White text */
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  margin-left: 180px;
+  margin-top: 15px;
+}
+
+.register-btn:hover {
+  background-color: #c3dd77; /* Darker blue on hover */
+}
+
+.form-disclaimer {
+  font-size: 0.8rem;
+  color: #666666; /* Dark gray disclaimer text */
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .prelaunch-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .prelaunch-section {
+    padding: 40px 15px;
+  }
+}
+
+#successMessage.hidden {
+  display: none !important;
+}
+.hidden {
+  display: none;
+}
+
+#successMessage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+}
+
+h2 {
+  margin: 15px 0 5px;
+}
+
+/* p {
+  color: #ffffff;
+} */
+
+.hidden {
+  display: none;
+}
