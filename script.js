@@ -110,5 +110,60 @@ function changeImage() {
   }
 }
 
+// document.getElementById('prelaunch-form').onsubmit = async (e) => {
+//   e.preventDefault();
+//   const username = document.getElementById('username').value;
+//   const email = document.getElementById('email').value;
 
+//   const response = await fetch('http://localhost:3005/users/addUser', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ username, email }),
+//   });
 
+//   const data = await response.json();
+//   alert(data.message);
+// };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('prelaunch-form');
+  
+  // Only add the event listener if the form exists
+  if (form) {
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      
+      try {
+        const response = await fetch('https://webbackend-ojng.onrender.com/users/addUser', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email }),
+        });
+        
+        const data = await response.json();
+        
+        // Hide form and show success message
+        document.getElementById('prelaunch-form').style.display = 'none';
+        document.getElementById('successMessage').classList.remove('hidden');
+        
+        // Redirect after 3 seconds (optional)
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
+    };
+  }
+  
+  // Make sure success message is hidden on page load
+  const successMessage = document.getElementById('successMessage');
+  if (successMessage) {
+    successMessage.classList.add('hidden');
+  }
+});
+//gfiireh
+//ijvgirji
