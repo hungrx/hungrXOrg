@@ -95,10 +95,6 @@ document.querySelector('.home-nav').addEventListener('click', function(e) {
 
 
 
-
-
-
-
 function changeImage() {
   const toggleSwitch = document.getElementById('toggleSwitch');
   const image = document.getElementById('toggleImage');
