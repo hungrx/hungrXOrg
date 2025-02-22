@@ -1846,7 +1846,8 @@ gap:2px;
 .form-group {
   position:relative;
   width: 400px;
-  margin-left: 55px;
+  /* margin-left: 55px; */
+  margin: 5px auto;
   margin-top: 5px;
 }
 
