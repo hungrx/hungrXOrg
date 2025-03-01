@@ -163,3 +163,90 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //gfiireh
 //ijvgirji
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const scrollContainer = document.querySelector(".app-image");
+  const leftBtn = document.querySelector(".left-btn");
+  const rightBtn = document.querySelector(".right-btn");
+  const imageContainer = document.querySelector(".image-container");
+
+  // Force buttons to be visible initially
+  leftBtn.style.display = "block";
+  rightBtn.style.display = "block";
+  
+  // Log elements to check if they're being found correctly
+  console.log("Scroll container:", scrollContainer);
+  console.log("Left button:", leftBtn);
+  console.log("Right button:", rightBtn);
+  console.log("Image container:", imageContainer);
+
+  function updateImageWidth() {
+    const imageWidth = document.querySelector(".image").clientWidth;
+    const gap = 10; // Gap value defined in CSS
+    return imageWidth + gap;
+  }
+
+  function updateButtonVisibility() {
+    // If at the beginning, hide left button
+    if (scrollContainer.scrollLeft < 5) {
+      leftBtn.style.display = "none";
+    } else {
+      leftBtn.style.display = "block";
+    }
+    
+    // Calculate maximum scroll width
+    const totalWidth = imageContainer.scrollWidth;
+    const visibleWidth = scrollContainer.clientWidth;
+    const maxScrollLeft = totalWidth - visibleWidth;
+    
+    console.log({
+      totalWidth: totalWidth,
+      visibleWidth: visibleWidth,
+      maxScrollLeft: maxScrollLeft,
+      currentScrollLeft: scrollContainer.scrollLeft
+    });
+    
+    // If at the end, hide right button
+    if (scrollContainer.scrollLeft >= maxScrollLeft - 5) {
+      rightBtn.style.display = "none";
+    } else {
+      rightBtn.style.display = "block";
+    }
+  }
+
+  // Handle button clicks
+  rightBtn.addEventListener("click", function() {
+    console.log("Right button clicked");
+    scrollContainer.scrollBy({
+      left: updateImageWidth(),
+      behavior: "smooth"
+    });
+    setTimeout(updateButtonVisibility, 300);
+  });
+
+  leftBtn.addEventListener("click", function() {
+    console.log("Left button clicked");
+    scrollContainer.scrollBy({
+      left: -updateImageWidth(),
+      behavior: "smooth"
+    });
+    setTimeout(updateButtonVisibility, 300);
+  });
+
+  // Update on scroll
+  scrollContainer.addEventListener("scroll", updateButtonVisibility);
+
+  // Update on resize
+  window.addEventListener("resize", function() {
+    setTimeout(updateButtonVisibility, 200);
+  });
+  
+  // Initial check after images have loaded
+  window.addEventListener("load", function() {
+    setTimeout(updateButtonVisibility, 200);
+  });
+  
+  // Initial check
+  setTimeout(updateButtonVisibility, 200);
+});
