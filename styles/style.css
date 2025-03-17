@@ -875,6 +875,7 @@ section {
   text-align: center;
   padding: 100px 20px;
   font-family: "Montserrat", sans-serif;
+  margin-top: 7px;
 }
 
 .download-section h2 {
@@ -904,8 +905,8 @@ section {
 }
 
 .download-button img {
-  width: 281.161px;
-  height: 86.873px;
+  width: 237.161px;
+  height: 68.873px;
 }
 
 
@@ -931,12 +932,13 @@ section {
   background-color: #1a1a1a;
   /* Dark background */
   color: white;
-  padding: 80px 0;
+  /* padding: 80px 0; */
   /* Add top and bottom padding */
   align-items: center;
   /* Center elements horizontally */
   display: flex;
   flex-direction: column;
+  margin-top: 125px;
 
 
 }
@@ -1306,7 +1308,6 @@ section {
   .download-buttons {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     gap: 1px;
     flex-wrap: nowrap;
     align-items: center;

@@ -71,8 +71,8 @@
           </svg>
         </a>
 
-        <a href="#prelaunch-registration" class="download-btn">JOIN</a>
-        <a href="#prelaunch-registration" class="download-icon">
+        <a href="#download" class="download-btn">DOWNLOAD</a>
+        <a href="#download" class="download-icon">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
             <path
               d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
@@ -87,9 +87,8 @@
 
       <h1 class="highlight"> Location-based Personalized Nutrition.</h1>
       <p>
-        Effortlessly discover your next meal with just a tap. Instantly view nearby
-        restaurants and access complete nutritional details, empowering you to stay
-        on target with every choice.
+        Effortlessly discover your next meal with just a tap. Instantly view nearby restaurants and access complete
+        nutritional details, empowering you to stay on target with every choice.
       </p>
 
 
@@ -104,7 +103,7 @@
   <!-- Our Story Section -->
   <section class="our-story" id="about-us-section">
     <div class="story-container">
-      <h2  class="smaller-heading" >OUR <span class="high"> STORY</span></h2>
+      <h2 class="smaller-heading">OUR <span class="high"> STORY</span></h2>
       <div class="underline"></div>
       <p>
         At the heart of hungrX is a story of real transformation. Our founder’s journey began at 96 kg, navigating
@@ -263,20 +262,6 @@
       </div>
   </section>
 
-  <!-- Download Section -->
-  <!-- <section id="download" class="download-section">
-    <h2>Download hungrX</h2>
-    <div class="download-buttons">
-      <a href="#" class="download-button app-store" id="app-store-button">
-        <img src="https://c.animaapp.com/D69QZtuL/img/group-9@2x.png" alt="Apple Logo">
-
-      </a>
-      <a href="#" class="download-button google-play" id="google-play-button">
-        <img src="https://c.animaapp.com/D69QZtuL/img/group-10@2x.png" alt="Google Play Logo">
-
-      </a>
-    </div>
-  </section> -->
   <!-- 
   <section id="app-preview" class="app-preview">
     <div class="carousel-container">
@@ -309,8 +294,7 @@
         <button class="next-btn">❯</button>
       </div>
     </div>
-  </section>
-   -->
+  </section> -->
 
   <section id="app-preview" class="app-preview">
     <button class="scroll-btn left-btn">&#10094;</button> <!-- Left Arrow -->
@@ -328,7 +312,7 @@
 
 
   <!-- Prelaunch Registration Section -->
-  <section id="prelaunch-registration" class="prelaunch-section">
+  <!-- <section id="prelaunch-registration" class="prelaunch-section">
     <div class="prelaunch-container">
       <h2>Be the First to Know</h2>
       <p class="pre">Join our prelaunch list to get early access and special offers when we launch!</p>
@@ -345,6 +329,22 @@
         </form>
       </div>
       <p class="form-disclaimer">We respect your privacy and will never share your information.</p>
+    </div>
+  </section> -->
+
+  <!-- Download Section -->
+  <section id="download" class="download-section">
+    <h2>Download hungrX</h2>
+    <div class="download-buttons">
+      <!-- Modified to have a specific class for the Apple button to keep the popup -->
+      <a href="https://apps.apple.com/in/app/hungrx/id6741845887" class="download-button show-popup" id="app-store-button">
+        <img src="https://c.animaapp.com/D69QZtuL/img/group-9@2x.png" alt="Apple Logo">
+      </a>
+      <!-- Modified to bypass the popup for Google Play button -->
+      <a href="https://play.google.com/store/apps/details?id=com.hungrx.hungrx_app" class="download-button google-play"
+        id="google-play-button" target="_blank" rel="noopener noreferrer">
+        <img src="https://c.animaapp.com/D69QZtuL/img/group-10@2x.png" alt="Google Play Logo">
+      </a>
     </div>
   </section>
 
@@ -404,7 +404,39 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Override any existing event handlers for the Google Play button
+    document.addEventListener('DOMContentLoaded', function () {
+      const googlePlayButton = document.getElementById('google-play-button');
 
+      // Remove any existing click event listeners
+      const newGooglePlayButton = googlePlayButton.cloneNode(true);
+      googlePlayButton.parentNode.replaceChild(newGooglePlayButton, googlePlayButton);
+
+      // Make sure the Google Play button goes directly to the link
+      newGooglePlayButton.addEventListener('click', function (event) {
+        // Let the default behavior (following the href) happen
+        // No need to show popup
+      });
+    });
+  </script>
+
+<script>
+  // Override any existing event handlers for the Google Play button
+  document.addEventListener('DOMContentLoaded', function () {
+    const googlePlayButton = document.getElementById('app-store-button');
+
+    // Remove any existing click event listeners
+    const newGooglePlayButton = googlePlayButton.cloneNode(true);
+    googlePlayButton.parentNode.replaceChild(newGooglePlayButton, googlePlayButton);
+
+    // Make sure the Google Play button goes directly to the link
+    newGooglePlayButton.addEventListener('click', function (event) {
+      // Let the default behavior (following the href) happen
+      // No need to show popup
+    });
+  });
+</script>
 
 </body>
 
