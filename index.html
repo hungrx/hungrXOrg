@@ -45,8 +45,8 @@
             <path
               d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
           </svg> </a>
-
-
+        <!-- ccpa-rights-heading -->
+        <a href="#ccpa-rights-heading"></a>
         <a href="#about-us-section" class="about-us">ABOUT US</a>
         <a href="#about-us-section" class="about-us-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
             viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
@@ -337,7 +337,8 @@
     <h2>Download hungrX</h2>
     <div class="download-buttons">
       <!-- Modified to have a specific class for the Apple button to keep the popup -->
-      <a href="https://apps.apple.com/in/app/hungrx/id6741845887" class="download-button show-popup" id="app-store-button">
+      <a href="https://apps.apple.com/in/app/hungrx/id6741845887" class="download-button show-popup"
+        id="app-store-button">
         <img src="https://c.animaapp.com/D69QZtuL/img/group-9@2x.png" alt="Apple Logo">
       </a>
       <!-- Modified to bypass the popup for Google Play button -->
@@ -421,22 +422,22 @@
     });
   </script>
 
-<script>
-  // Override any existing event handlers for the Google Play button
-  document.addEventListener('DOMContentLoaded', function () {
-    const googlePlayButton = document.getElementById('app-store-button');
+  <script>
+    // Override any existing event handlers for the Google Play button
+    document.addEventListener('DOMContentLoaded', function () {
+      const googlePlayButton = document.getElementById('app-store-button');
 
-    // Remove any existing click event listeners
-    const newGooglePlayButton = googlePlayButton.cloneNode(true);
-    googlePlayButton.parentNode.replaceChild(newGooglePlayButton, googlePlayButton);
+      // Remove any existing click event listeners
+      const newGooglePlayButton = googlePlayButton.cloneNode(true);
+      googlePlayButton.parentNode.replaceChild(newGooglePlayButton, googlePlayButton);
 
-    // Make sure the Google Play button goes directly to the link
-    newGooglePlayButton.addEventListener('click', function (event) {
-      // Let the default behavior (following the href) happen
-      // No need to show popup
+      // Make sure the Google Play button goes directly to the link
+      newGooglePlayButton.addEventListener('click', function (event) {
+        // Let the default behavior (following the href) happen
+        // No need to show popup
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 
