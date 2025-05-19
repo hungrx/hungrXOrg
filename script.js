@@ -106,21 +106,6 @@ function changeImage() {
   }
 }
 
-// document.getElementById('prelaunch-form').onsubmit = async (e) => {
-//   e.preventDefault();
-//   const username = document.getElementById('username').value;
-//   const email = document.getElementById('email').value;
-
-//   const response = await fetch('http://localhost:3005/users/addUser', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({ username, email }),
-//   });
-
-//   const data = await response.json();
-//   alert(data.message);
-// };
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('prelaunch-form');
   

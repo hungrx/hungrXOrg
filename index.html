@@ -184,36 +184,37 @@
 
       </div>
       <!-- Founder Image -->
-      <!-- <div class="founder-image">
-        <div class="founder-details">
-          <p class="founder-name">Febbin Chacko</p>
-          <p class="founder-role">Founder of HungrX</p>
-        </div>
-        <div class="founder-image-div">
-          <img class="element-image" id="toggleImage" src="./media/1st image.png" alt="Founder" />
-        </div>
-      </div> -->
-
       <div class="founder-image">
         <div class="founder-details">
           <p class="founder-name">Febbin Chacko</p>
           <p class="founder-role">Founder of HungrX</p>
         </div>
+
         <div class="founder-image-div">
-          <img class="element-image" id="founderImage" src="./media/1st image.png" alt="Founder" />
+          <img class="element-image" id="toggleImage" src="./media/1st image.png" alt="Founder" />
         </div>
+
+
       </div>
+
+
+
     </div>
 
-    <!-- <div class="toggle-container">
-      <span class="toggle-label-text">Switch On</span>
-      <div class="toggle-wrapper">
-        <input type="checkbox" id="toggleSwitch" class="toggle-checkbox" onclick="changeImage()" />
-        <label for="toggleSwitch" class="toggle-label">
-          <span class="toggle-circle"></span>
-        </label>
-      </div>
-    </div> -->
+<div class="wrapper">
+<fieldset class="toggle-container">
+  <div class='legend'><span>Switch On</span></div>
+  <div class='checkboxGroup'>
+    <label class='checkboxControl'>
+      <input type='checkbox' id="toggleSwitch" onclick="changeImage()" />
+      <div>ΟΙ</div><b></b>
+      <span class='indicator'></span>
+    </label>
+  </div>
+</fieldset>
+</div>
+
+
   </section>
 
 
@@ -441,50 +442,6 @@
         // No need to show popup
       });
     });
-  </script>
-
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-      const founderImage = document.getElementById('founderImage');
-      
-      if (!founderImage) {
-        console.error('Founder image element not found!');
-        return;
-      }
-
-      window.addEventListener('scroll', function() {
-        const founderSection = document.querySelector('.founder-image');
-        if (!founderSection) return;
-        
-        const founderRect = founderSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        // Check if at least 50% of the section is visible
-        const visibleHeight = Math.min(founderRect.bottom, viewportHeight) - Math.max(founderRect.top, 0);
-        const sectionHeight = founderRect.height;
-        const visibilityPercentage = visibleHeight / sectionHeight;
-        
-        if (visibilityPercentage > 0.95) {
-          founderImage.src = './media/2nd image.png';
-        } else {
-          founderImage.src = './media/1st image.png';
-        }
-      });
-    });
-</script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('./sw.js')
-        .then(function(registration) {
-          console.log('ServiceWorker registration successful');
-        })
-        .catch(function(err) {
-          console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-  }
   </script>
 
 </body>
