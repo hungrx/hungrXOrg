@@ -2370,14 +2370,6 @@ h2 {
   }
 }
 
-.toggle-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  gap: 10px;
-}
-
 .toggle-label-text {
   font-size: 16px;
   color: #fff;
@@ -2405,8 +2397,242 @@ h2 {
   cursor: pointer;
 }
 
-@media (min-width: 1025px) and (max-width: 1500px){
-  .toggle-container{
-margin-left: 50%;
+.toggle-container {
+  display: block;
+  border: none;
+  width: 90%;           /* Makes it responsive */
+  max-width: 370px;      /* Limits it to 370px max */
+  margin: 20px auto;     /* Centers it horizontally */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.legend {
+  color: rgba(0,0,0,.7);
+  font-size: 12px;
+  margin-bottom: 14px;
+  height: 15px;
+  border-color: #2E6677;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  box-shadow: 1px 1px 0 rgba(255,255,255,0.2) inset;
+  text-shadow: 0 1px #bada55;
+}
+
+.legend span {
+  text-transform: uppercase;
+  position: relative;
+  top: -5px;
+  padding: 0 10px;
+  background: #000000;
+  display: inline-block;
+  color: #bada55;
+  text-shadow: 0 1px #bada55;
+  animation: shine 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.legend span::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: shine-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shine-sweep {
+  0% {
+    left: -100%;
+  }
+  40%, 100% {
+    left: 130%;
+  }
+}
+
+@keyframes shine {
+  0%, 100% {
+    text-shadow: 0 1px #bada55, 0 0 5px rgba(186, 218, 85, 0.5);
+  }
+  50% {
+    text-shadow: 0 1px #bada55, 0 0 15px rgba(186, 218, 85, 0.8), 0 0 20px rgba(186, 218, 85, 0.6);
+    color: #d8ff55;
+  }
+}
+
+.checkboxGroup {
+  display: inline-block;
+  vertical-align: middle;
+  width: 150px;
+  border: none;
+  margin-left: 55px;
+}
+
+.checkboxControl {
+  border: 2px solid #4A5F16;
+  border-radius: 7px;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  padding-top: 1px;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 60px 10px 0;
+  color: #5F7119;
+  box-shadow: 0 0 5px rgba(255,255,255,.4), 
+             0 2px 1px -1px rgba(255,255,255,.7) inset, 
+             8px 0 5px -5px #61750D inset,
+             -8px 0 5px -5px #61750D inset;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  background: rgb(186, 218, 85);
+}
+
+.checkboxControl input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.checkboxControl > div {
+  background: -webkit-linear-gradient(left, #BADA55 0%,#C4E75A 53%,#A9C941 56%,#8EAC22 99%,#D6F580 100%);
+  background: linear-gradient(to right, #BADA55 0%,#C4E75A 53%,#A9C941 56%,#8EAC22 99%,#D6F580 100%);
+  box-shadow: -2px 0 1px 0 #D6F580 inset;
+  border-radius: 5px;
+  line-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px rgba(255,255,255,0.5);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform: scaleX(0.93);
+  -webkit-transform: scaleX(0.93);
+  transition: .1s;
+  -webkit-transition: 0.1s;
+}
+
+.checkboxControl div:first-letter {
+  letter-spacing: 55px;
+}
+
+.checkboxControl :checked ~ div {
+  transform-origin: 100% 0;
+  -webkit-transform-origin: 100% 0;
+  box-shadow: 2px 0 1px 0 #D6F580 inset;
+  background: -webkit-linear-gradient(left, #D6F580 0%,#8EAC22 1%,#A9C941 47%,#C4E75A 50%,#BADA55 100%);
+  background: linear-gradient(to right, #D6F580 0%,#8EAC22 1%,#A9C941 47%,#C4E75A 50%,#BADA55 100%);
+}
+
+/* bottom shadow of 'upper' side of the button */
+.checkboxControl > b {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  -webkit-transform: skewY(5deg);
+  transform: skewY(5deg);
+  box-shadow: 0 6px 8px -5px #000;
+}
+
+.checkboxControl :checked ~ b {
+  right: auto;
+  left: 0;
+  -webkit-transform: skewY(-5deg);
+  transform: skewY(-5deg);
+}
+
+/* the light indicator to the right of the button */
+.checkboxControl .indicator {
+  position: absolute;
+  top: 14px;
+  right: -20px;
+  width: 8px;
+  height: 25px;
+  box-shadow: 0 0 8px #000 inset;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
+
+.checkboxControl .indicator:before {
+  content: '';
+  display: inline-block;
+  margin-top: 8px;
+  width: 2px;
+  height: 8px;
+  border-radius: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.checkboxControl :checked ~ .indicator:before {
+  box-shadow: 0 0 7px 6px #BADA55;
+  width: 6px;
+  background: #E8F7C7;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+}
+
+@media screen and (min-width: 1463px) and (max-width: 1600px) {
+  .toggle-container {
+    max-width: 450px;    /* Slightly larger max-width for this range */
+    width: 85%;          /* Adjust width percentage if needed */
+  }
+  
+  .wrapper {
+    padding: 25px; 
+   margin-left: 55%;      /* Slightly more padding if desired */
+  }
+}
+
+@media screen and (min-width: 1305px) and (max-width: 1462px){
+   .toggle-container {
+    max-width: 450px;    /* Slightly larger max-width for this range */
+    width: 85%;          /* Adjust width percentage if needed */
+  }
+  
+  .wrapper {
+    padding: 25px; 
+   margin-left: 48%;      /* Slightly more padding if desired */
+  }
+}
+
+@media screen and (min-width: 1122px) and (max-width: 1304px){
+    .toggle-container {
+    max-width: 450px;    /* Slightly larger max-width for this range */
+    width: 85%;          /* Adjust width percentage if needed */
+  }
+  
+  .wrapper {
+    padding: 25px; 
+   margin-left: 44%;      /* Slightly more padding if desired */
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1122px){
+     .toggle-container {
+    max-width: 450px;    /* Slightly larger max-width for this range */
+    width: 85%;          /* Adjust width percentage if needed */
+  }
+  
+  .wrapper {
+    padding: 25px; 
+   margin-left: 44%;      /* Slightly more padding if desired */
   }
 }
